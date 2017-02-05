@@ -1,0 +1,62 @@
+<div class="col-md-12" ng-controller="AboutCtrl">
+
+	<div class="row">
+		<div class="col-lg-4">
+
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{{userData.results[0].name.title | capitalize}}. {{userData.results[0].name.first | capitalize}} {{userData.results[0].name.last | capitalize}}</h3>
+		  </div>
+		  <div class="panel-body">
+		  <address>
+		    <strong>Twitter, Inc.</strong><br>
+		    {{userData.results[0].location.street | capitalize}}<br>
+		    {{userData.results[0].location.city | capitalize}}, {{userData.results[0].location.state | capitalize}} {{userData.results[0].location.postcode}}<br>
+		    <abbr title="Phone">P:</abbr> {{userData.results[0].phone}}
+		  </address>
+
+		  <address>
+		    <strong>{{userData.results[0].name.first | capitalize}} {{userData.results[0].name.last | capitalize}}</strong><br>
+		    <a href="mailto:#">{{userData.results[0].email}}</a>
+		  </address>
+		  </div>
+		</div>
+		</div>
+
+		<div class="col-lg-8">
+			<div class="panel panel-default">
+			  <div class="panel-heading text-right"><strong>About us</strong></div>
+			  <div class="panel-body">
+			    <span ng-bind-html="userBio"></span>
+			    <p class="text-right">
+			    	<strong>{{userData.results[0].name.first | capitalize}} {{userData.results[0].name.last | capitalize}}</strong><br>
+			    	<a href="mailto:#">{{userData.results[0].email}}</a>
+			    </p>
+			  </div>
+			</div>
+		</div>
+
+	</div>
+	<hr class="divider"/>
+	<h1 class="text-center bottomMargin">Meet Our Team!!</h1>
+	<div class="row">
+	        <div class="col-lg-4 text-center">
+	          <img class="img-circle" ng-src="{{userOne.results[0].picture.large}}" alt="Generic placeholder image" width="140" height="140">
+	          <h2>{{userOne.results[0].name.first | capitalize}} {{userOne.results[0].name.last | capitalize}}</h2>
+	          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+	          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+	        </div><!-- /.col-lg-4 -->
+	        <div class="col-lg-4  text-center">
+	          <img class="img-circle" ng-src="{{userTwo.results[0].picture.large}}" alt="Generic placeholder image" width="140" height="140">
+	          <h2>{{userTwo.results[0].name.first | capitalize}} {{userTwo.results[0].name.last | capitalize}}</h2>
+	          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+	          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+	        </div><!-- /.col-lg-4 -->
+	        <div class="col-lg-4  text-center">
+	        <img class="img-circle" ng-src="{{userThree.results[0].picture.large}}" alt="Generic placeholder image" width="140" height="140">
+	        <h2>{{userThree.results[0].name.first | capitalize}} {{userThree.results[0].name.last | capitalize}}</h2>
+	          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+	          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+	        </div><!-- /.col-lg-4 -->
+	</div>
+</div>

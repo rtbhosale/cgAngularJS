@@ -1,0 +1,42 @@
+<div class="col-md-12" ng-controller="ContactCtrl">
+
+<div class="row">
+	<div class="col-lg-4">
+
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Drop us a mail!</h3>
+	  </div>
+	  <div class="panel-body">
+	  <form name="contactForm">
+		<div class="form-group">
+		   <input type="name" class="form-control" id="name" ng-pattern="/^[a-zA-Z ]*$/" required ng-model="contact.name" placeholder="Full name">
+		</div>
+		<div class="form-group">
+		   <input type="text" class="form-control" id="phone" ng-pattern="/^[0-9]{10}$/" required ng-model="contact.phone" placeholder="Phone">
+		</div>
+	    <div class="form-group">
+	      <input type="email" class="form-control" id="email" ng-model="contact.email" required placeholder="Email">
+	    </div>
+
+	    <div class="form-group">
+	      <textarea class="form-control" rows="3" ng-model="contact.Message" required placeholder="Message"></textarea>
+	    </div>
+	    <button type="submit" class="btn btn-primary" ng-disabled="!contactForm.$valid" ng-click="sendMail(contact);">Send</button>
+	  </form>
+	  </div>
+	</div>
+	</div>
+
+	<div class="col-lg-8">
+		<div class="panel panel-default">
+		  <div class="panel-heading text-right"><strong>Locate Us</strong></div>
+		  <div class="panel-body-margin">
+		  <div my-map=""></div>
+		  </div>
+		</div>
+	</div>
+
+</div>
+
+</div>

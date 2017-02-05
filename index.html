@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="n">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+  <link href="style.css" type="text/css" rel="stylesheet/css">
+</head>
+<body>
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/ngSanitize/index.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  
+  <!-- Add New Bower Component JS Above -->
+
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="partial/home/home.js"></script>
+  <script src="partial/about/about.js"></script>
+  <script src="partial/contact/contact.js"></script>
+  <script src="filter/capitalize.js"></script>
+  <script src="directive/myMap.js"></script>
+  <!-- Add New Component JS Above -->
+
+  <div>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="https://code-maven.com/img/angularjs.png" height="45px" width="45px"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{'active': currentState == 'home' || currentState == ''}"><a ui-sref="home""><span class="fa fa-home" aria-hidden="true"> Home</span></a></li>
+            <li ng-class="{'active': currentState == 'about'}"><a ui-sref="about""><span class="fa fa-info-circle" aria-hidden="true"> About</span></a></li>
+            <li ng-class="{'active': currentState == 'contact'}"><a ui-sref="contact"><span class="fa fa-envelope" aria-hidden="true"> Contact</span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div id="content" class="container">
+      <div class="row">
+        <div ui-view>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
